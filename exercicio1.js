@@ -1,11 +1,12 @@
-const exercicioUm = (arr, soma) => {
-    const arrayRetorno = []
+const exercicioUm = (arr, x) => {
+    const memoization = {}
     for(let i=0; i<arr.length-1; i++){
-        for(let j=i+1; j<arr.length; j++){
-            if(arr[i] + arr[j] === soma){
-                arrayRetorno.push(arr[i], arr[j])
-            }
+        let resto = x - arr[i]
+        if(resto in memoization){
+            return [memoization[resto], arr[i]]
+        } else {
+            memoization[arr[i]] = arr[i]
         }
     }
-    return arrayRetorno.length > 0 ? arrayRetorno : []
+    return []
 }
