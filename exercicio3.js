@@ -12,6 +12,7 @@ const exercicioTres = frase => {
                 count = 0
             }
         } else {
+            current = count + frase[i]
             final += current
             current = ''
             count = 1
@@ -19,6 +20,10 @@ const exercicioTres = frase => {
     }
     return final
 }
+
+const x = 'ABCDEFGGGGGGGGGGGGGGGGGGG'
+
+console.log(exercicioTres(x))
 
 /* função para codificar a string para o estado inicial
 const reverseTres = frase => {
